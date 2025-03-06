@@ -127,12 +127,17 @@ let dropReone = document.querySelectorAll(".dropReone")
 
 nav.forEach(item=>{
     item.addEventListener("click",function(){
-        dropReone.forEach(dropRr=>{
-            dropRr.innerHTML=''
-            dropRr.style.display="none"
-        })
         let dropR = item.querySelector('.dropReone')
-        dropR.style.display="block"
+        if(dropR.style.display=="block"){
+            dropR.style.display='none'            
+        }
+        else{
+            dropReone.forEach(dropRr=>{
+            dropRr.innerHTML=''
+            dropRr.style.display="none"})
+            dropR.style.display='block'
+        }
+
         
         
         let kod = ''
@@ -141,8 +146,8 @@ nav.forEach(item=>{
             if(item.innerHTML.includes(data.name)){
                 for(i = 0 ; i < data.title.length ; i++){
                     dropR.innerHTML+=`<li class="flex py-[.75em] ps-4 pe-8" style='font-family:"Manrope", sans-serif;'>
-                    <div class='imgBr w-[52px] bg-[#dbeafe] rounded-[.5em] flex items-center justify-center me-4'>
-                        <img width="28" src="${data.img[i]}"/>
+                    <div class='imgBr w-[52px] h-[52px] bg-[#dbeafe] rounded-[.5em] flex items-center justify-center me-4'>
+                        <img width="28" height="28" src="${data.img[i]}"/>
                     </div>
                     <div>
                         <h3 class="text-[#334155] text-[1em] font-medium">${data.title[i]}</h3>
@@ -154,8 +159,8 @@ nav.forEach(item=>{
             kod+=`</ul></div>`
         })
     })
-    
 })
+
 const sideBar = document.getElementById("sideBar")
 const hide = document.querySelector(".hide")
 function showSideBar(){

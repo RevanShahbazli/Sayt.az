@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="./output.css" rel="stylesheet">
 </head>
@@ -29,7 +30,7 @@
                 <ul style='font-family:"Manrope", sans-serif;' class="flex font-bold text-[#300b60]">
                     <li class="nav lg:mx-6 xl:mx-6  cursor-pointer relative flex justify-center">Veb Sayt
                         <i class="fa-solid fa-chevron-down pt-[5px] relative mx-1 text-[.8em]"></i>
-                        <div class="dropReone rounded-[.5em] hidden  border absolute top-[40px] min-w-[340px]  pt-4 max-h-[500px] overflow-y-scroll"></div>
+                        <div class="dropReone rounded-[.5em] hidden  border absolute top-[40px] min-w-[380px]  pt-4 max-h-[500px] overflow-y-scroll"></div>
                         </li>
                     <li class="nav lg:mx-6 xl:mx-6  cursor-pointer relative flex justify-center">Domen
                         <i class="fa-solid fa-chevron-down pt-[5px] mx-1 text-[.8em]"></i>
@@ -57,8 +58,8 @@
                             <svg height="20" style="color: #aaa;" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg"><path fill="#ccc" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>
                         </button>
                         <div id="dropdownMenu" class="absolute right-0 top-8 mt-2 w-20 bg-white border rounded-lg shadow-lg hidden">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200"><i class="fa-solid fa-dollar-sign"></i></a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200"><i class="fa-solid fa-manat-sign"></i></a>
+                            <a href="#" onclick="changeMoney(dollar)" class="block px-4 py-2 hover:bg-gray-200"><i class="fa-solid fa-dollar-sign"></i></a>
+                            <a href="#" onclick="changeMoney(manat)" class="block px-4 py-2 hover:bg-gray-200" style="font-weight: 600; font-size: 1.2em;">₼</a>
                         </div>
                     </div>
                 </div>
@@ -84,9 +85,33 @@
             </div>
         </div>
   </header>
-  <div id="sideBar" class="h-[100vh] fixed right-0 w-[400px] pt-8 hidden top-0 z-30 bg-white border-l-[1px] border-[#ddd]">
-        <div onclick="hideSideBar()" class="none  absolute right-6 top-6  cursor-pointer text-[2em]">
+  <div id="sideBar" class="h-[100vh] fixed right-0 min-w-[380px] w-[400px] p-6 hidden top-0 z-10 bg-white border-l-[1px] border-[#ddd]">
+        <div onclick="hideSideBar()" class="none  flex justify-end  cursor-pointer text-[2em]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" class="__web-inspector-hide-shortcut__"></path></svg>
+        </div>
+        <div class=" py-6 block lg:hidden ">
+            <ul style='  font-family: "Inter", sans-serif;' class="block font-bold text-[1em] text-[#300b60]">
+                <li class="nav mx-3 mt-2 py-2    cursor-pointer relative flex">Veb Sayt
+                    <i class="fa-solid fa-chevron-down pt-[5px] relative mx-1 text-[.8em]"></i>
+                    <div class="dropReone rounded-[.5em] hidden bg-white  border absolute top-[40px]  z-20  pt-4 max-h-[500px] overflow-y-scroll"></div>
+                    </li>
+                <li class="nav mx-3 mt-2 py-2   cursor-pointer relative flex ">Domen
+                    <i class="fa-solid fa-chevron-down pt-[5px] mx-1 text-[.8em]"></i>
+                    <div class="dropReone rounded-[.5em] hidden bg-white z-20 border absolute top-[40px] mr-10 min-w-[340px]  pt-4 "></div>
+                </li>
+                <li class="nav mx-3 mt-2 py-2   cursor-pointer relative flex ">Hostinq
+                    <i class="fa-solid fa-chevron-down pt-[5px] mx-1 text-[.8em]"></i>
+                    <div class="dropReone rounded-[.5em] hidden bg-white z-20 border absolute top-[40px] min-w-[340px]  pt-4 "></div>
+                </li>
+                <li class="nav mx-3 mt-2 py-2   cursor-pointer relative flex ">Xidmətlər
+                    <i class="fa-solid fa-chevron-down pt-[5px] mx-1 text-[.8em]"></i>
+                    <div class="dropReone rounded-[.5em] hidden bg-white z-20 border absolute top-[40px] min-w-[340px]  pt-4"></div>
+                </li>
+                <li class="nav mx-3 mt-2 py-2   cursor-pointer relative flex ">Şirkət
+                    <i class="fa-solid fa-chevron-down pt-[5px] mx-1 text-[.8em]"></i>
+                    <div class="dropReone rounded-[.5em] hidden bg-white z-20 border absolute top-[40px] min-w-[340px] overflow-y-scroll max-h-[350px] pt-4"></div>
+                </li>
+            </ul>
         </div>
         <div class="flagMoney flex mt-5 ms-10">
             <div class="money flex me-5 xl:pt-[10px]">
@@ -120,7 +145,8 @@
             <button class="border mx-auto my-2  w-10/12 p-[.6rem] rounded-[.5em] px-5 text-[#a271f2] font-bold border-[#a271f2]">Daxil olun</button>
            </div>
   </div>
-
+  <div class="icon-right absolute">
+  </div>
   <script src="script.js"></script>
   <script>
         const btn = document.getElementById("dropdownBtn");
